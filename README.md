@@ -43,5 +43,5 @@ del settore moda.
 
 
 
-
-https://yuml.me/alepica/bcd229e8.svg
+[
+https://yuml.me/alepica/bcd229e8.svg](http://yuml.me/alepica/bcd229e8.png)

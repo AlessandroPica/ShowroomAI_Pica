@@ -261,17 +261,6 @@ in modo da risolvere problemi velocemente.
 
 ---
 
-## 📱 Pacchetti e Prezzi
-
-| Pacchetto | Foto | Prezzo | Features |
-|-----------|------|--------|----------|
-| **Starter** | 5 | €29 | Foto + descrizioni |
-| **Professional** | 10 | €49 | + Editor avanzato |
-| **Business** | 25 | €99 | + Integrazioni e-commerce |
-| **Enterprise** | 50 | €199 | + Support priority |
-
----
-
 ## 🔒 Conformità e Sicurezza
 
 - ✅ **GDPR**: Diritto all'oblio, data portability

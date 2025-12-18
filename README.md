@@ -61,24 +61,53 @@ L'utente carica una descrizione e una foto del prodotto → L'AI genera automati
 
 ### 📊 Casi d'Uso Principali
 
-![UML Use Case Diagram](https://user-gen-media-assets.s3.amazonaws.com/seedream_images/eb2d1002-ed04-48ea-815a-6bd4c9617642.png)
+**Codice YUML per generare il diagramma:**
+
+```yuml
+[Proprietario]-(Usa Piattaforma),
+
+[Admin]-(Gestione Utenti),
+[Admin]-(Monitoraggio Sistema),
+
+[Banca]-(Elabora Pagamento),
+[Servizio AI]-(Genera Immagini),
+
+(Usa Piattaforma)>(Registrazione),
+(Usa Piattaforma)>(Selezione Pacchetto),
+(Usa Piattaforma)>(Caricamento Prodotto),
+(Usa Piattaforma)>(Visualizza Dashboard),
+(Usa Piattaforma)>(Gestione Crediti),
+
+(Registrazione)>(Conferma Email),
+
+(Selezione Pacchetto)>(Aggiungi al Carrello),
+(Aggiungi al Carrello)>(Checkout),
+(Checkout)<(Elabora Pagamento),
+
+(Caricamento Prodotto)>(Inserisci Dettagli),
+(Inserisci Dettagli)>(Genera Immagini),
+
+(Visualizza Dashboard)>(Statistiche),
+(Visualizza Dashboard)>(Storico Progetti),
+
+(Gestione Crediti)>(Acquista Crediti Extra),
+(Gestione Crediti)>(Verifica Saldo),
+
+[note: VisualAI Commerce - Piattaforma]
+```
 
 **Attori:**
-- 👤 **E-commerce Owner**: Proprietario del negozio (utente principale)
+- 👤 **Proprietario**: Proprietario del negozio (utente principale)
 - 🔧 **Admin**: Amministratore della piattaforma
-- 💳 **Stripe**: Sistema di pagamento
-- 🤖 **AI Service**: Servizio generazione immagini
+- 🏦 **Banca**: Sistema di pagamento
+- 🤖 **Servizio AI**: Servizio generazione immagini
 
-**Casi d'Uso Principali:**
-1. **Registrazione/Login** - Accesso alla piattaforma
-2. **Selezione Pacchetto** - Scelta del piano (5, 10, 25, 50 foto)
-3. **Upload Prodotto** - Caricamento immagine + descrizione
-4. **Generazione AI** - L'AI crea le foto
-5. **Editing** - Modifica foto (crop, filtri, testo)
-6. **Generazione Descrizioni** - AI scrive testo SEO
-7. **Pubblicazione** - Pubblica su Shopify/WooCommerce
-8. **Pagamento** - Paga tramite Stripe
-9. **Dashboard** - Visualizza statistiche e storico
+**Flusso Principale:**
+1. **Registrazione** → Conferma Email
+2. **Selezione Pacchetto** → Carrello → Checkout → Pagamento
+3. **Caricamento Prodotto** → Dettagli → Generazione Immagini
+4. **Dashboard** → Statistiche e Storico
+5. **Gestione Crediti** → Acquista o Verifica Saldo
 
 ---
 
@@ -88,16 +117,16 @@ L'utente carica una descrizione e una foto del prodotto → L'AI genera automati
 
 | ID | Funzionalità | Descrizione |
 |----|------------|------------|
-| **RF1** | Autenticazione | Login con email/password o Google |
-| **RF2** | Pacchetti | Scelta tra 4 opzioni di prezzo |
-| **RF3** | Upload | Caricamento immagini (max 5MB) |
-| **RF4** | Generazione AI | Crea foto automaticamente |
-| **RF5** | Editor | Modifica foto (crop, colori, testo) |
-| **RF6** | Descrizioni | AI genera testo SEO |
-| **RF7** | Integrazione E-commerce | Pubblica su Shopify/WooCommerce |
-| **RF8** | Pagamento | Checkout con Stripe |
-| **RF9** | Dashboard | Metriche e storico progetti |
-| **RF10** | Crediti | Sistema di crediti/tokens |
+| **RF1** | Registrazione | Login con email/password o Google |
+| **RF2** | Selezione Pacchetto | Scelta tra 4 opzioni di prezzo |
+| **RF3** | Carrello | Visualizzazione riepilogo, tasse, totale |
+| **RF4** | Pagamento | Checkout con Stripe |
+| **RF5** | Caricamento Prodotto | Caricamento immagini (max 5MB) |
+| **RF6** | Dettagli Prodotto | Descrizione, categoria, colori, stile |
+| **RF7** | Generazione AI | Crea foto automaticamente |
+| **RF8** | Visualizza Dashboard | Metriche e storico progetti |
+| **RF9** | Gestione Crediti | Acquista o verifica saldo |
+| **RF10** | Amministrazione | Gestione utenti e monitoraggio sistema |
 
 ### 🔴 Requisiti Non Funzionali (come deve funzionare)
 
@@ -116,7 +145,7 @@ L'utente carica una descrizione e una foto del prodotto → L'AI genera automati
 - **E-commerce**: Supporto categorie prodotto, varianti (colore, taglia)
 - **AI**: Scelta modello (DALL-E, Stability AI), prompt professionali
 - **Fotografia**: Best practices di lighting, background, prospettiva
-- **Pagamenti**: Idempotency key, webhook Stripe, refund policy
+- **Pagamenti**: Idempotency key, webhook Banca, refund policy
 - **Conformità**: GDPR, CCPA, IP rights, DMCA takedown
 
 ---
@@ -125,16 +154,17 @@ L'utente carica una descrizione e una foto del prodotto → L'AI genera automati
 
 ### 👤 Come proprietario di e-commerce...
 
-#### **STORY 1 - Registrazione**
+#### **STORY 1 - Registrazione e Login**
 ```
 Come proprietario di e-commerce,
-voglio registrarmi con email/password,
+voglio registrarmi con email/password o Google,
 in modo da accedere ai servizi.
 
 ✓ Form registrazione
 ✓ Validazione email
 ✓ Conferma via email (24h)
 ✓ Password sicura (8+ caratteri)
+✓ Login con SSO Google
 ```
 
 #### **STORY 2 - Selezione Pacchetto**
@@ -146,71 +176,21 @@ in modo da pagare solo quello che uso.
 ✓ Pacchetti: 5 foto (€29), 10 foto (€49), 25 foto (€99), 50 foto (€199)
 ✓ Descrizione features per ogni pacchetto
 ✓ Aggiunta al carrello
-✓ Calcolo tasse e totale
 ```
 
-#### **STORY 3 - Upload Prodotto**
-```
-Come proprietario di e-commerce,
-voglio caricare foto del mio prodotto,
-in modo da farla generare dall'AI.
-
-✓ Drag & drop per caricare file
-✓ Formati: JPG, PNG (max 5MB)
-✓ Preview immagine
-✓ Descrizione prodotto (categoria, colori, stile)
-```
-
-#### **STORY 4 - Generazione AI**
+#### **STORY 3 - Carrello e Checkout**
 ```
 Come proprietario di e-commerce,
-voglio che l'AI generi automaticamente le foto,
-in modo da risparmiare tempo.
+voglio visualizzare il riepilogo del carrello,
+in modo da verificare i costi prima del pagamento.
 
-✓ Invio al sistema di generazione
-✓ Progress bar con tempo stimato
-✓ Notifica quando pronte
-✓ Download immediate
+✓ Riepilogo prezzo, tasse, totale
+✓ Calcolo tasse (IVA per Italia)
+✓ Codice coupon
+✓ Pulsante checkout
 ```
 
-#### **STORY 5 - Editor Foto**
-```
-Come proprietario di e-commerce,
-voglio modificare le foto generate,
-in modo da personalizzarle.
-
-✓ Crop e rotazione
-✓ Luminosità, contrasto, saturazione
-✓ Testo overlay (titolo, sconto)
-✓ Scarica singola o ZIP batch
-```
-
-#### **STORY 6 - Descrizioni SEO**
-```
-Come proprietario di e-commerce,
-voglio che l'AI scriva descrizioni SEO,
-in modo da non scriverle manualmente.
-
-✓ Titolo (max 60 caratteri)
-✓ Descrizione breve (max 150 caratteri)
-✓ Descrizione lunga (max 500 caratteri)
-✓ Keywords (10+)
-✓ SEO score real-time
-```
-
-#### **STORY 7 - Pubblicazione**
-```
-Come proprietario di e-commerce,
-voglio pubblicare le foto nel mio negozio,
-in modo da venderle.
-
-✓ Connettore Shopify (OAuth)
-✓ Connettore WooCommerce
-✓ Pubblicazione diretta
-✓ Aggiornamento metadati prodotto
-```
-
-#### **STORY 8 - Pagamento**
+#### **STORY 4 - Pagamento**
 ```
 Come proprietario di e-commerce,
 voglio pagare in modo sicuro,
@@ -222,20 +202,45 @@ in modo da completare l'acquisto.
 ✓ Ricevuta email automatica
 ```
 
-#### **STORY 9 - Dashboard**
+#### **STORY 5 - Caricamento Prodotto**
+```
+Come proprietario di e-commerce,
+voglio caricare foto e dettagli del mio prodotto,
+in modo da farla generare dall'AI.
+
+✓ Drag & drop per caricare file
+✓ Formati: JPG, PNG (max 5MB)
+✓ Preview immagine
+✓ Inserimento descrizione prodotto
+✓ Selezione categoria
+✓ Scelta colori brand
+✓ Scelta stile (minimalist, lussuoso, sportivo)
+```
+
+#### **STORY 6 - Generazione AI**
+```
+Come proprietario di e-commerce,
+voglio che l'AI generi automaticamente le foto,
+in modo da risparmiare tempo.
+
+✓ Invio al sistema di generazione
+✓ Progress bar con tempo stimato
+✓ Notifica quando pronte
+✓ Download immediate
+```
+
+#### **STORY 7 - Visualizza Dashboard**
 ```
 Come proprietario di e-commerce,
 voglio visualizzare le mie statistiche,
 in modo da monitorare l'utilizzo.
 
-✓ Foto generate questo mese
-✓ Crediti rimasti
-✓ Spesa totale e risparmio
-✓ Storico progetti
+✓ Statistiche: foto generate, crediti rimasti, spesa totale
+✓ Storico progetti con date e status
 ✓ Export report PDF/CSV
 ```
 
-#### **STORY 10 - Gestione Crediti**
+#### **STORY 8 - Gestione Crediti**
 ```
 Come proprietario di e-commerce,
 voglio ricevere avvisi sui crediti,
@@ -245,6 +250,18 @@ in modo da non rimanere bloccato.
 ✓ Notifica a 20%, 10%, 0%
 ✓ Acquisto crediti extra on-demand
 ✓ Opzione subscription mensile
+```
+
+#### **STORY 9 - Pubblicazione**
+```
+Come proprietario di e-commerce,
+voglio pubblicare le foto nel mio negozio,
+in modo da venderle.
+
+✓ Connettore Shopify (OAuth)
+✓ Connettore WooCommerce
+✓ Pubblicazione diretta
+✓ Aggiornamento metadati prodotto
 ```
 
 ---
@@ -286,33 +303,6 @@ in modo da risolvere problemi velocemente.
 | **Business** | 25 | €99 | + Integrazioni e-commerce |
 | **Enterprise** | 50 | €199 | + Support priority |
 
-**Opzione**: Subscription mensile ricorrente con sconto 20%.
-
----
-
-## 🎯 MVP (Lancio Iniziale)
-
-✅ **Essenziale**
-- Autenticazione (email/password)
-- 4 pacchetti prezzo
-- Upload e generazione foto AI
-- Editor base (crop, colori)
-- Integrazione Shopify
-- Pagamento Stripe
-- Dashboard semplice
-
-🔄 **Fase 2**
-- WooCommerce integration
-- Advanced analytics
-- API pubblica
-- AI descriptions
-
-💡 **Future**
-- Mobile app nativa
-- Video generation
-- 3D visualization
-- Multi-language avanzato
-
 ---
 
 ## 🔒 Conformità e Sicurezza
@@ -326,22 +316,6 @@ in modo da risolvere problemi velocemente.
 
 ---
 
-## 📚 Tecnologie Stack
-
-**Frontend**: React 18, Next.js 14, TypeScript, Tailwind CSS, Framer Motion
-**Backend**: Node.js + Express / Python + FastAPI, PostgreSQL, Redis
-**AI**: OpenAI API (DALL-E 3), Stability AI, LangChain
-**Pagamenti**: Stripe API, Paddle (EU VAT)
-**Cloud**: AWS (EC2, S3, CloudFront), GitHub Actions CI/CD
-**Monitoring**: Sentry, DataDog, ELK Stack
-
----
-
-## 🚀 Go-to-Market
-
-1. **Week 1-2**: Sviluppo MVP core (auth, AI generation, editor)
-2. **Week 3-4**: Integrazione Shopify e Stripe
-3. **Week 5**: Testing e refinement
-4. **Week 6**: Lancio beta con primi 100 utenti
-5. **Week 7+**: Feedback loop, iterazione, scale
-
+**Versione**: 3.0 (Allineato al Diagramma UML)  
+**Data**: Dicembre 2025  
+**Status**: Pronto per Presentazione

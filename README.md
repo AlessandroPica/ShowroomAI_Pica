@@ -61,40 +61,7 @@ L'utente carica una descrizione e una foto del prodotto → L'AI genera automati
 
 ### 📊 Casi d'Uso Principali
 
-**Codice YUML per generare il diagramma:**
-
-```yuml
-[Proprietario]-(Usa Piattaforma),
-
-[Admin]-(Gestione Utenti),
-[Admin]-(Monitoraggio Sistema),
-
-[Banca]-(Elabora Pagamento),
-[Servizio AI]-(Genera Immagini),
-
-(Usa Piattaforma)>(Registrazione),
-(Usa Piattaforma)>(Selezione Pacchetto),
-(Usa Piattaforma)>(Caricamento Prodotto),
-(Usa Piattaforma)>(Visualizza Dashboard),
-(Usa Piattaforma)>(Gestione Crediti),
-
-(Registrazione)>(Conferma Email),
-
-(Selezione Pacchetto)>(Aggiungi al Carrello),
-(Aggiungi al Carrello)>(Checkout),
-(Checkout)<(Elabora Pagamento),
-
-(Caricamento Prodotto)>(Inserisci Dettagli),
-(Inserisci Dettagli)>(Genera Immagini),
-
-(Visualizza Dashboard)>(Statistiche),
-(Visualizza Dashboard)>(Storico Progetti),
-
-(Gestione Crediti)>(Acquista Crediti Extra),
-(Gestione Crediti)>(Verifica Saldo),
-
-[note: VisualAI Commerce - Piattaforma]
-```
+<img width="1727" height="791" alt="immagine" src="https://github.com/user-attachments/assets/774e111b-e8fe-4630-b6bb-f63d8cd05fae" />
 
 **Attori:**
 - 👤 **Proprietario**: Proprietario del negozio (utente principale)
@@ -313,9 +280,3 @@ in modo da risolvere problemi velocemente.
 - ✅ **Pagamenti**: PCI DSS via Stripe
 - ✅ **IP Rights**: Chiaro che le foto appartengono all'utente
 - ✅ **Accessibilità**: WCAG 2.1 AA, mobile-first
-
----
-
-**Versione**: 3.0 (Allineato al Diagramma UML)  
-**Data**: Dicembre 2025  
-**Status**: Pronto per Presentazione

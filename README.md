@@ -79,40 +79,9 @@ L'utente carica una descrizione e una foto del prodotto → L'AI genera automati
 
 ### 📊 Casi d'Uso Principali
 
-**Codice YUML per generare il diagramma:**
+**diagramma UML:**
+<img width="1713" height="798" alt="immagine" src="https://github.com/user-attachments/assets/d5d446a6-b572-4e65-a8cb-0f0e4e137262" />
 
-```yuml
-[Proprietario]-(Usa Piattaforma),
-
-[Admin]-(Gestione Utenti),
-[Admin]-(Monitoraggio Sistema),
-
-[Banca]-(Elabora Pagamento),
-[Servizio AI]-(Genera Immagini),
-
-(Usa Piattaforma)>(Registrazione),
-(Usa Piattaforma)>(Selezione Pacchetto),
-(Usa Piattaforma)>(Caricamento Prodotto),
-(Usa Piattaforma)>(Visualizza Dashboard),
-(Usa Piattaforma)>(Gestione Crediti),
-
-(Registrazione)>(Conferma Email),
-
-(Selezione Pacchetto)>(Aggiungi al Carrello),
-(Aggiungi al Carrello)>(Checkout),
-(Checkout)<(Elabora Pagamento),
-
-(Caricamento Prodotto)>(Inserisci Dettagli),
-(Inserisci Dettagli)>(Genera Immagini),
-
-(Visualizza Dashboard)>(Statistiche),
-(Visualizza Dashboard)>(Storico Progetti),
-
-(Gestione Crediti)>(Acquista Crediti Extra),
-(Gestione Crediti)>(Verifica Saldo),
-
-[note: VisualAI Commerce - Piattaforma]
-```
 
 **Attori:**
 - 👤 **Proprietario**: Proprietario del negozio (utente principale)
@@ -312,17 +281,6 @@ in modo da risolvere problemi velocemente.
 
 ---
 
-## 📱 Pacchetti e Prezzi
-
-| Pacchetto | Foto | Prezzo | Features |
-|-----------|------|--------|----------|
-| **Starter** | 5 | €29 | Foto + descrizioni |
-| **Professional** | 10 | €49 | + Editor avanzato |
-| **Business** | 25 | €99 | + Integrazioni e-commerce |
-| **Enterprise** | 50 | €199 | + Support priority |
-
----
-
 ## 🔒 Conformità e Sicurezza
 
 - ✅ **GDPR**: Diritto all'oblio, data portability
@@ -331,9 +289,3 @@ in modo da risolvere problemi velocemente.
 - ✅ **Pagamenti**: PCI DSS via Stripe
 - ✅ **IP Rights**: Chiaro che le foto appartengono all'utente
 - ✅ **Accessibilità**: WCAG 2.1 AA, mobile-first
-
----
-
-**Versione**: 3.1 (Tabella Benchmarking Aggiornata)  
-**Data**: Dicembre 2025  
-**Status**: Pronto per Presentazione

@@ -39,21 +39,39 @@ L'utente carica una descrizione e una foto del prodotto → L'AI genera automati
 
 ## Analisi di Mercato
 
-### Competitor Principali
+### Tabella di Benchmarking per Analisi dei Competitors
+
+| Feature | Importance | Your Brand | Competitor A | Competitor B | Competitor X |
+|---------|-----------|-----------|-------------|-------------|-------------|
+| **Generazione Immagini AI** | High | ✅ | ✅ | ✅ |  |
+| **Modelli Template Predesignati** | High | ✅ | ✅ |  |  |
+| **Pacchetti Prezzo Scalabili** | High | ✅ | ✅ |  | ✅ |
+| **Integrazione Diretta E-commerce** | High | ✅ |  |  |  |
+| **Customizzazione Brand/Colori** | High | ✅ | ✅ | ✅ |  |
+| **Generazione Descrizioni Prodotto** | Moderate | ✅ | ✅ |  | ✅ |
+| **Varianti di Prodotto (SKU)** | Moderate | ✅ | ✅ |  |  |
+| **Editing Post-Generazione** | Moderate | ✅ | ✅ | ✅ |  |
+| **Supporto Lingua Multi-Locale** | Moderate | ✅ |  | ✅ |  |
+| **Analytics e Performance Tracking** | Low | ✅ |  |  | ✅ |
+
+**Legenda:**
+- ✅ = Funzionamento presente
+- ⬜ = Non disponibile/assente
+
+### 📊 Competitor Principali
 
 | Competitor | Prezzo | Vantaggi | Svantaggi |
 |-----------|--------|----------|-----------|
-| **Shopify AI** | €29 | Integrazione nativa | Solo per Shopify |
-| **Adobe Express** | €119 | Suite completa | Troppo complesso per PMI |
-| **Canva** | €120 | Facile da usare | Generico, non per e-commerce |
-| **Freelancer** | €15+ | Qualità umana | Troppo lento (settimane) |
-| **VisualAI** | €29 | Specializzato, veloce | Nuovo nel mercato |
+| **Shopify AI (Competitor A)** | €29 | Integrazione nativa | Solo per Shopify |
+| **Adobe Express (Competitor B)** | €119 | Suite completa | Troppo complesso per PMI |
+| **Canva (Competitor X)** | €120 | Facile da usare | Generico, non per e-commerce |
 
-### 📊 Posizionamento
-- **Specializzazione**: Solo per e-commerce + AI
-- **Prezzo**: Competitivo (€29 entry-level)
+### 📊 Posizionamento di VisualAI Commerce
+- **Specializzazione**: Solo per e-commerce + AI (differenziatore chiave)
+- **Prezzo**: Competitivo (€29 entry-level, come Shopify)
 - **Velocità**: Minuti invece di settimane
 - **Semplicità**: Zero competenze tecniche richieste
+- **Vantaggio**: Integrazione diretta con Shopify E WooCommerce (esclusivo)
 
 ---
 
@@ -61,7 +79,40 @@ L'utente carica una descrizione e una foto del prodotto → L'AI genera automati
 
 ### 📊 Casi d'Uso Principali
 
-<img width="1727" height="791" alt="immagine" src="https://github.com/user-attachments/assets/774e111b-e8fe-4630-b6bb-f63d8cd05fae" />
+**Codice YUML per generare il diagramma:**
+
+```yuml
+[Proprietario]-(Usa Piattaforma),
+
+[Admin]-(Gestione Utenti),
+[Admin]-(Monitoraggio Sistema),
+
+[Banca]-(Elabora Pagamento),
+[Servizio AI]-(Genera Immagini),
+
+(Usa Piattaforma)>(Registrazione),
+(Usa Piattaforma)>(Selezione Pacchetto),
+(Usa Piattaforma)>(Caricamento Prodotto),
+(Usa Piattaforma)>(Visualizza Dashboard),
+(Usa Piattaforma)>(Gestione Crediti),
+
+(Registrazione)>(Conferma Email),
+
+(Selezione Pacchetto)>(Aggiungi al Carrello),
+(Aggiungi al Carrello)>(Checkout),
+(Checkout)<(Elabora Pagamento),
+
+(Caricamento Prodotto)>(Inserisci Dettagli),
+(Inserisci Dettagli)>(Genera Immagini),
+
+(Visualizza Dashboard)>(Statistiche),
+(Visualizza Dashboard)>(Storico Progetti),
+
+(Gestione Crediti)>(Acquista Crediti Extra),
+(Gestione Crediti)>(Verifica Saldo),
+
+[note: VisualAI Commerce - Piattaforma]
+```
 
 **Attori:**
 - 👤 **Proprietario**: Proprietario del negozio (utente principale)
@@ -261,6 +312,17 @@ in modo da risolvere problemi velocemente.
 
 ---
 
+## 📱 Pacchetti e Prezzi
+
+| Pacchetto | Foto | Prezzo | Features |
+|-----------|------|--------|----------|
+| **Starter** | 5 | €29 | Foto + descrizioni |
+| **Professional** | 10 | €49 | + Editor avanzato |
+| **Business** | 25 | €99 | + Integrazioni e-commerce |
+| **Enterprise** | 50 | €199 | + Support priority |
+
+---
+
 ## 🔒 Conformità e Sicurezza
 
 - ✅ **GDPR**: Diritto all'oblio, data portability
@@ -269,3 +331,9 @@ in modo da risolvere problemi velocemente.
 - ✅ **Pagamenti**: PCI DSS via Stripe
 - ✅ **IP Rights**: Chiaro che le foto appartengono all'utente
 - ✅ **Accessibilità**: WCAG 2.1 AA, mobile-first
+
+---
+
+**Versione**: 3.1 (Tabella Benchmarking Aggiornata)  
+**Data**: Dicembre 2025  
+**Status**: Pronto per Presentazione

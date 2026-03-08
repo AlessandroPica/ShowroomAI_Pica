@@ -334,4 +334,28 @@ gantt
   Frontend & Backend :2026-04-01, 14d
   AI
 
+---
 
+### Elevator Pitch
+
+Salve, sono Alessandro Pica e oggi vi presento VisualAI Commerce, una piattaforma SaaS B2B per e-commerce che genera foto professionali di prodotti con l'AI in pochi minuti, senza fotografi costosi. È pensata per piccoli negozi online, venditori su Shopify e WooCommerce e agenzie con budget limitato.
+
+Il problema è che i proprietari di e-commerce spendono migliaia di euro e settimane per foto pro, frenando gli aggiornamenti del catalogo e le vendite. In Italia l'e-commerce vale oltre 80 miliardi di euro, ma i piccoli imprenditori non hanno tool semplici e veloci.
+
+La soluzione è facile: carichi una foto grezza e una descrizione, l'AI con DALL-E e Stability AI crea varianti professionali con i tuoi colori brand, e le pubblichi direttamente su Shopify o WooCommerce. Paghi solo per quello che usi, con pacchetti da 5 foto a 29 euro fino a 50 foto a 199 euro.
+
+Il mercato è enorme: l'AI per immagini è in boom globale con centinaia di milioni di fatturato, e l'e-commerce italiano cresce velocissimo.
+
+Il business model è transazionale B2B, pay-per-use con pacchetti scalabili: margini alti perché usiamo API AI economiche.
+
+Usiamo tecnologia moderna: frontend React, backend Node o Python, database PostgreSQL, pagamenti con Stripe e cloud AWS.
+
+I competitors come Shopify AI funzionano solo sulla loro piattaforma, Adobe Express è troppo complesso, Canva è generico. Noi vinciamo con integrazioni dirette multi-piattaforma, generazione in meno di 1 minuto, editing facile e supporto GDPR.
+
+Acquisiamo clienti via App Store di Shopify, ads su Google e Facebook per PMI italiane, SEO su 'foto AI e-commerce' e partnership con agenzie di merchandising.
+
+Il mio team sono io, Alessandro Pica da Monza, esperto in visual merchandising e consulenza retail, con esperienza in vendite e AI per design.
+
+Chiediamo un budget piccolo di 8.000 euro per partire: 3.000 per sviluppo frontend e backend, 2.000 per integrazioni AI, 2.000 per test e marketing iniziale, e 1.000 per server e pagamenti. Con questo lanciamo il progetto scolastico e lo rendiamo reale.
+
+Che ne dite? VisualAI Commerce risparmia l'80% sui costi foto e fa crescere le vendite e-commerce. Grazie!

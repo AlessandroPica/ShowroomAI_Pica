@@ -294,8 +294,7 @@ in modo da risolvere problemi velocemente.
 
 ## Link lovable
 ```
-ecom-beauty-ai
-.lovable.app
+https://ecom-beauty-ai.lovable.app
 
 ```
 

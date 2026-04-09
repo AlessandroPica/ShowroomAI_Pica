@@ -302,40 +302,104 @@ https://ecom-beauty-ai.lovable.app
 
 
 ### WBS del Progetto
-```
-  root((ShowroomAi))
-    1 Analisi
-      Requisiti
-      Competitors
-    2 Design
-      UI/UX
-      Flussi
-    3 Sviluppo
-      Frontend
-      Backend
-      AI
-    4 Test
-      Funzionali
-      Utenti
+
+```mermaid
+%%{init: {
+  'themeVariables': { 'fontSize': '16px' },
+  'flowchart': { 'nodeSpacing': 50, 'rankSpacing': 80 }
+}}%%
+graph LR
+    A["VisualAI Commerce<br/>(Budget: €8.000)"]
+
+    A --> B["1. Analisi & Design<br/>(€1.000)"]
+    B --> B1["Requisiti & Competitors"]
+    B --> B2["UI/UX & Flussi"]
+
+    A --> C["2. Sviluppo Frontend & Backend<br/>(€3.000)"]
+    C --> C1["React & UI Components"]
+    C --> C2["Node/Python & PostgreSQL"]
+
+    A --> D["3. Integrazione AI & Server<br/>(€2.000)"]
+    D --> D1["API DALL-E & Stability AI"]
+    D --> D2["Infrastruttura Cloud AWS"]
+
+    A --> E["4. Test & Marketing<br/>(€2.000)"]
+    E --> E1["Test Funzionali & Utenti"]
+    E --> E2["Lancio & Campagne Ads"]
 ```
 
 ---
 
 
-### GANTT del Progetto
+### Cronoprogramma (GANTT)
 
+```mermaid
 gantt
-  dateFormat  YYYY-MM-DD
-  title ShowroomAi - Progetto Scolastico
-  section 1 Analisi
-  Requisiti & Competitors :2026-03-10, 7d
-  section 2 Design
-  UI/UX & Flussi :2026-03-20, 7d
-  section 3 Sviluppo
-  Frontend & Backend :2026-04-01, 14d
-  AI
+    title VisualAI Commerce – Cronoprogramma di Sviluppo
+    dateFormat  YYYY-MM-DD
+    axisFormat %d/%m
+
+    section 1. Analisi & Design
+    Requisiti & Competitors       :a1, 2026-03-10, 7d
+    UI/UX & Flussi               :a2, after a1, 7d
+
+    section 2. Sviluppo FE & BE
+    Architettura DB & API        :b1, 2026-03-24, 7d
+    Sviluppo Frontend React      :b2, after b1, 14d
+    Sviluppo Backend             :b3, after b1, 14d
+
+    section 3. Integrazione AI
+    Integrazione API AI          :c1, 2026-04-07, 10d
+    Setup Server AWS             :c2, after c1, 4d
+
+    section 4. Test & Lancio
+    Test Funzionali & QA         :d1, 2026-04-21, 7d
+    Marketing e Lancio           :d2, after d1, 7d
+    Lancio Ufficiale             :milestone, 2026-05-05, 0d
+```
 
 ---
+
+## Business Strategy
+
+### Slide Mentali
+
+#### **Slide 1: The Opening Slide**
+VisualAI Commerce: Piattaforma SaaS B2B che genera foto professionali di prodotti con l'AI in pochi minuti.
+
+#### **Slide 2: The Problem**
+I proprietari di e-commerce (Shopify, WooCommerce) spendono migliaia di euro e settimane per foto professionali, frenando le vendite e gli aggiornamenti del catalogo.
+
+#### **Slide 3: The Solution**
+Carichi una foto grezza e una descrizione: l'intelligenza artificiale (DALL-E, Stability AI) crea varianti professionali con i colori del tuo brand pronte per la pubblicazione.
+
+#### **Slide 4: Market Size**
+L'e-commerce italiano vale oltre 80 miliardi di euro e il mercato globale dell'AI per immagini è in rapida espansione, ma i piccoli imprenditori mancano di tool semplici.
+
+#### **Slide 5: Business Model**
+Modello B2B transazionale pay-per-use con pacchetti scalabili (es. 5 foto a 29€, 50 foto a 199€). Alti margini grazie all'uso di API AI economiche.
+
+#### **Slide 6: Proprietary Technology**
+Stack moderno: Frontend in React, Backend in Node/Python, Database PostgreSQL, pagamenti via Stripe e infrastruttura Cloud AWS. Integrazioni dirette multipiattaforma.
+
+#### **Slide 7: Competition**
+Shopify AI (limitato alla piattaforma), Adobe Express (troppo complesso), Canva (troppo generico).
+
+#### **Slide 8: Why is VisualAI Commerce better?**
+Generazione in meno di un minuto, editing facile, supporto GDPR e integrazioni dirette senza essere vincolati a una singola piattaforma.
+
+#### **Slide 9: Customer Acquisition**
+App Store di Shopify, Ads su Google e Facebook per PMI italiane, SEO su keyword specifiche ("foto AI e-commerce") e partnership con agenzie di merchandising.
+
+#### **Slide 10: Founding Team**
+Alessandro Pica: Esperto in visual merchandising e consulenza retail, con solida esperienza nelle vendite e nell'applicazione dell'AI al design.
+
+#### **Slide 11: Money, Milestones**
+Richiesta di budget di €8.000:
+- €3.000: Sviluppo Frontend e Backend
+- €2.000: Integrazioni AI
+- €2.000: Test e Marketing iniziale
+- €1.000: Server e gestione pagamenti
 
 ### Elevator Pitch
 

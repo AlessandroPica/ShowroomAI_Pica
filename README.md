@@ -297,6 +297,12 @@ in modo da risolvere problemi velocemente.
 https://ecom-beauty-ai.lovable.app
 
 ```
+<img width="1422" height="821" alt="image" src="https://github.com/user-attachments/assets/15e15b4c-87d1-4704-bc41-b16f6c38ebd2" />
+<img width="1410" height="926" alt="image" src="https://github.com/user-attachments/assets/d388d5da-1a3e-47d1-9f49-7ea7ac669dd2" />
+<img width="1406" height="896" alt="image" src="https://github.com/user-attachments/assets/55557df7-6d2e-4ede-a6f5-3b1d572d131c" />
+<img width="1414" height="331" alt="image" src="https://github.com/user-attachments/assets/08b60bfa-0833-4457-8b64-481fb227b929" />
+
+
 
 ---
 
